@@ -1,0 +1,1 @@
+# generic-shop-web-app-tests
