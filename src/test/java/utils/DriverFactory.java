@@ -11,25 +11,24 @@ public class DriverFactory {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        driver = selectDriver("Chrom");
+        driver = selectDriver("Chrome");
         return driver;
     }
 
     public static WebDriver selectDriver(String browserName) {
-        WebDriver driver = null;
 
         if (browserName.equalsIgnoreCase("Chrome")) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            return new ChromeDriver();
         } else if (browserName.equalsIgnoreCase("Firefox")) {
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            return new FirefoxDriver();
         } else if (browserName.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+            return new EdgeDriver();
         } else {
             System.out.println("Incorrect browser name");
         }
-        return driver;
+        return null;
     }
 }
