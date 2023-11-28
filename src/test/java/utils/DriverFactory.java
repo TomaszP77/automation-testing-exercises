@@ -11,7 +11,7 @@ public class DriverFactory {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        driver = selectDriver("Chrome");
+        driver = selectDriver("Chrom");
         return driver;
     }
 
@@ -28,7 +28,7 @@ public class DriverFactory {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         } else {
-            System.out.println("Niepoprawna nazwa przeglądarki");
+            System.out.println("Incorrect browser name");
         }
         return driver;
     }
