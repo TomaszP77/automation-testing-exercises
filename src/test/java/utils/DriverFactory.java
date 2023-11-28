@@ -27,6 +27,8 @@ public class DriverFactory {
         } else if (browserName.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
+        } else {
+            System.out.println("Niepoprawna nazwa przeglądarki");
         }
         return driver;
     }
