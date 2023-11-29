@@ -8,11 +8,12 @@ import utils.PropertiesLoader;
 
 import java.io.IOException;
 
+import static pages.MyAccountPage.assertionForTooWeekPassword;
+
 public class RegistrationTests extends BaseTest {
 
     @Test
     public void registrationUserTest() throws IOException {
-
         String email = PropertiesLoader.loadProperty("db.userEmail");
         String password = PropertiesLoader.loadProperty("db.userPassword");
 
@@ -25,13 +26,12 @@ public class RegistrationTests extends BaseTest {
 
     @Test
     public void registrationUserWithTooWeakPasswordTest() throws IOException {
-
         String email = PropertiesLoader.loadProperty("db.userEmail2");
         String password = PropertiesLoader.loadProperty("db.userPassword2");
 
-        String assertion = new HomePage(driver).myAccount()
-                .assertionForTooWeekPassword(email, password);
+        new HomePage(driver).myAccount()
+                .registerUser(email, password);
 
-        Assertions.assertEquals("Weak - Please enter a stronger password.", assertion);
+        Assertions.assertEquals("Weak - Please enter a stronger password.", assertionForTooWeekPassword());
     }
 }
