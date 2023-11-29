@@ -22,4 +22,16 @@ public class RegistrationTests extends BaseTest {
 
         Assertions.assertEquals("edit your password and account details", assertion);
     }
+
+    @Test
+    public void registrationUserWithTooWeakPasswordTest() throws IOException {
+
+        String email = PropertiesLoader.loadProperty("db.userEmail2");
+        String password = PropertiesLoader.loadProperty("db.userPassword2");
+
+        String assertion = new HomePage(driver).myAccount()
+                .assertionForTooWeekPassword(email, password);
+
+        Assertions.assertEquals("Weak - Please enter a stronger password.", assertion);
+    }
 }
