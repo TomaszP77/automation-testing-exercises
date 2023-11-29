@@ -14,6 +14,9 @@ public class MyAccountPage {
     private WebElement passwordInput;
     @FindBy(name = "register")
     private WebElement registerButton;
+    @FindBy(css = "[class=\"woocommerce-password-strength bad\"]")
+    private WebElement passwordStrengthBad;
+
     private WebDriver driver;
 
     public MyAccountPage(WebDriver driver) {
@@ -26,5 +29,12 @@ public class MyAccountPage {
         passwordInput.sendKeys(password);
         registerButton.click();
         return new LogInUserPage(driver);
+    }
+
+    public String assertionForTooWeekPassword(String name, String password) {
+        emailInput.sendKeys(name);
+        passwordInput.sendKeys(password);
+        registerButton.click();
+        return passwordStrengthBad.getText();
     }
 }
