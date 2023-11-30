@@ -17,7 +17,8 @@ public class RegistrationTests extends BaseTest {
         String email = PropertiesLoader.loadProperty("db.userEmail");
         String password = PropertiesLoader.loadProperty("db.userPassword");
 
-        String assertion = new HomePage(driver).myAccount()
+        String assertion = new HomePage(driver)
+                .myAccount()
                 .registerUser(email, password)
                 .assertionMessageForLogInUser();
 
@@ -29,7 +30,8 @@ public class RegistrationTests extends BaseTest {
         String email = PropertiesLoader.loadProperty("db.userEmail2");
         String password = PropertiesLoader.loadProperty("db.userPassword2");
 
-        new HomePage(driver).myAccount()
+        new HomePage(driver)
+                .myAccount()
                 .registerUser(email, password);
 
         Assertions.assertEquals("Weak - Please enter a stronger password.", assertionForTooWeekPassword());
