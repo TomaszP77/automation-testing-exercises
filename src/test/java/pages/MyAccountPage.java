@@ -16,6 +16,13 @@ public class MyAccountPage {
     private WebElement passwordInput;
     @FindBy(name = "register")
     private WebElement registerButton;
+    @FindBy(id = "username")
+    private WebElement loginEmailInput;
+    @FindBy(id = "password")
+    private WebElement loginPasswordInput;
+    @FindBy(name = "login")
+    private WebElement submitLoginButton;
+
     private WebDriver driver;
 
     public MyAccountPage(WebDriver driver) {
@@ -31,6 +38,13 @@ public class MyAccountPage {
         emailInput.sendKeys(name);
         passwordInput.sendKeys(password);
         registerButton.click();
+        return new LogInUserPage(driver);
+    }
+
+    public LogInUserPage logInUser(String email, String password) {
+        loginEmailInput.sendKeys(email);
+        loginPasswordInput.sendKeys(password);
+        submitLoginButton.click();
         return new LogInUserPage(driver);
     }
 }
