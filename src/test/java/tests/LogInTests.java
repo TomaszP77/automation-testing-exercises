@@ -8,6 +8,8 @@ import utils.PropertiesLoader;
 
 import java.io.IOException;
 
+import static pages.MyAccountPage.assertionForNoData;
+
 public class LogInTests extends BaseTest {
 
     @Test
@@ -22,4 +24,15 @@ public class LogInTests extends BaseTest {
 
         Assertions.assertEquals("edit your password and account details", assertion);
     }
+
+    @Test
+    public void logInUserLogInWithoutData() {
+
+        new HomePage(driver)
+                .myAccount()
+                .logInUser("", "");
+
+        Assertions.assertEquals("Error: Username is required.", assertionForNoData());
+    }
 }
+

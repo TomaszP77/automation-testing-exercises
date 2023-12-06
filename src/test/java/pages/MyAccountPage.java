@@ -10,6 +10,8 @@ public class MyAccountPage {
 
     @FindBy(css = "[class=\"woocommerce-password-strength bad\"]")
     private static WebElement passwordStrengthBad;
+    @FindBy(css = "[class=\"woocommerce-error\"] > li")
+    private static WebElement errorMessageNoData;
     @FindBy(id = "reg_email")
     private WebElement emailInput;
     @FindBy(id = "reg_password")
@@ -32,6 +34,10 @@ public class MyAccountPage {
 
     public static String assertionForTooWeekPassword() {
         return passwordStrengthBad.getText();
+    }
+
+    public static String assertionForNoData() {
+        return errorMessageNoData.getText();
     }
 
     public LogInUserPage registerUser(String name, String password) {
