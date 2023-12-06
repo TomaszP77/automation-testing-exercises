@@ -26,7 +26,7 @@ public class LogInTests extends BaseTest {
     }
 
     @Test
-    public void logInUserLogInWithoutData() throws IOException {
+    public void logInUserLogInWithoutData() {
 
         new HomePage(driver)
                 .myAccount()
