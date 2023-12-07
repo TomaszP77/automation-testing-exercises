@@ -36,7 +36,7 @@ public class MyAccountPage {
         return passwordStrengthBad.getText();
     }
 
-    public static String assertionForNoData() {
+    public static String assertionForWrongData() {
         return errorMessageNoData.getText();
     }
 
