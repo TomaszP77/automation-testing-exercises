@@ -8,7 +8,7 @@ import utils.PropertiesLoader;
 
 import java.io.IOException;
 
-import static pages.MyAccountPage.assertionForNoData;
+import static pages.MyAccountPage.assertionForWrongData;
 
 public class LogInTests extends BaseTest {
 
@@ -32,7 +32,21 @@ public class LogInTests extends BaseTest {
                 .myAccount()
                 .logInUser("", "");
 
-        Assertions.assertEquals("Error: Username is required.", assertionForNoData());
+        Assertions.assertEquals("Error: Username is required.", assertionForWrongData());
+    }
+
+    @Test
+    public void logInUserWithIncorrectPassword() throws IOException {
+        String email = PropertiesLoader.loadProperty("db.userEmail2");
+        String password = PropertiesLoader.loadProperty("db.userPassword2");
+
+        new HomePage(driver)
+                .myAccount()
+                .logInUser(email, password);
+
+        Assertions.assertEquals("Error: The password you entered for the username Angelika777@ab" +
+                ".cd is incorrect. Lost your password?", assertionForWrongData());
     }
 }
+
 
