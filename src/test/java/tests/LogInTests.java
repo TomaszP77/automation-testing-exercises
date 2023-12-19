@@ -26,7 +26,7 @@ public class LogInTests extends BaseTest {
     }
 
     @Test
-    public void logInUserLogInWithoutData() {
+    public void logInUserWithoutDataTest() {
 
         new HomePage(driver)
                 .myAccount()
@@ -36,7 +36,7 @@ public class LogInTests extends BaseTest {
     }
 
     @Test
-    public void logInUserWithIncorrectPassword() throws IOException {
+    public void logInUserWithIncorrectPasswordTest() throws IOException {
         String email = PropertiesLoader.loadProperty("db.userEmail2");
         String password = PropertiesLoader.loadProperty("db.userPassword2");
 
