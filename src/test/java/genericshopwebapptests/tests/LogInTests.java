@@ -1,14 +1,14 @@
-package tests;
+package genericshopwebapptests.tests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pages.HomePage;
-import utils.BaseTest;
-import utils.PropertiesLoader;
+import genericshopwebapptests.pages.HomePage;
+import genericshopwebapptests.utils.BaseTest;
+import genericshopwebapptests.utils.PropertiesLoader;
 
 import java.io.IOException;
 
-import static pages.MyAccountPage.assertionForWrongData;
+import static genericshopwebapptests.pages.MyAccountPage.assertionForWrongData;
 
 public class LogInTests extends BaseTest {
 
