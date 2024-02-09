@@ -1,1 +1,1 @@
-# generic-shop-web-app-tests
+# selenium-coding-exercises
