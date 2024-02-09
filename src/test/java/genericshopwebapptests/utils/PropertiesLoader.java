@@ -1,4 +1,4 @@
-package utils;
+package genericshopwebapptests.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;

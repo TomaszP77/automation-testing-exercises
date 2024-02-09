@@ -1,4 +1,4 @@
-package utils;
+package genericshopwebapptests.utils;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-import static utils.DriverFactory.getDriver;
+import static genericshopwebapptests.utils.DriverFactory.getDriver;
 
 public class BaseTest {
 
