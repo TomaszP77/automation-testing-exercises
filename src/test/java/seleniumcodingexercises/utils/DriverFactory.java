@@ -11,26 +11,24 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driverInstance == null) {
-            driverInstance = selectDriver("Chrome");
+            driverInstance = selectDriver(DriverType.CHROME);
         }
         return driverInstance;
     }
 
-    private static WebDriver selectDriver(String browser) {
+    private static WebDriver selectDriver(DriverType type) {
 
         WebDriver driver = null;
-        switch (browser) {
-            case "Chrome":
+        switch (type) {
+            case CHROME:
                 driver = new ChromeDriver();
                 break;
-            case "Firefox":
+            case FIREFOX:
                 driver = new FirefoxDriver();
                 break;
-            case "Edge":
+            case EDGE:
                 driver = new EdgeDriver();
                 break;
-            default:
-                System.out.println("Wrong browser name");
         }
         return driver;
     }
