@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    private static WebDriver driver;
+    protected static WebDriver driver;
 
     @BeforeAll
     public static void setUp() {
