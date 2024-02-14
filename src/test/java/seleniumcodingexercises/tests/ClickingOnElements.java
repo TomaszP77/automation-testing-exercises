@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import seleniumcodingexercises.utils.BaseTest;
 
-public class ClickingOnItems extends BaseTest {
+public class ClickingOnElements extends BaseTest {
 
     @Test
     public void exerciseOfClickingOnElements() {
