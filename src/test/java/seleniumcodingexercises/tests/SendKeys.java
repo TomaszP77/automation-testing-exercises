@@ -1,5 +1,6 @@
 package seleniumcodingexercises.tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import seleniumcodingexercises.utils.BaseTest;
@@ -15,5 +16,8 @@ public class SendKeys extends BaseTest {
         driver.findElement(By.id("reg_email")).sendKeys("abcd" + randomEmail + "@efg.hij");
         driver.findElement(By.id("reg_password")).sendKeys("password1234567!!!");
         driver.findElement(By.name("register")).click();
+
+        String assertionMessage = driver.findElement(By.cssSelector(".entry-title")).getText();
+        Assertions.assertEquals("My account", assertionMessage);
     }
 }
