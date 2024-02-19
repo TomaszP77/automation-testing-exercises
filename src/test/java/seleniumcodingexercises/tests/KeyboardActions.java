@@ -16,8 +16,7 @@ public class KeyboardActions extends BaseTest {
         driver.findElement(By.id("menu-item-22")).click();
         WebElement emailInput = driver.findElement(By.id("reg_email"));
         emailInput.sendKeys("abcd" + randomEmail + Keys.SPACE + "@efg.hij");
-        emailInput.sendKeys(Keys.TAB);
-        driver.findElement(By.id("reg_password")).sendKeys(Keys.ENTER);
+        emailInput.sendKeys(Keys.ENTER);
         for (int i = 0; i < 9; i++) {
             emailInput.sendKeys(Keys.BACK_SPACE);
         }
