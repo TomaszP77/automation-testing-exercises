@@ -19,4 +19,8 @@ public class BaseTest {
     public void openSeleniumDemo() {
         driver.get("http://seleniumdemo.com/");
     }
+
+    public void openSeleniumTestingInputs() {
+        driver.get("https://www.selenium.dev/selenium/web/inputs.html");
+    }
 }
