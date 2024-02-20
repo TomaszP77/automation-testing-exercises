@@ -15,4 +15,11 @@ public class CheckboxRadioButton extends BaseTest {
         checkbox.click();
         checkbox.click();
     }
+
+    @Test
+    public void radioButtonAction() {
+        openSeleniumTestingInputs();
+
+        driver.findElement(By.name("[value='radio2']"));
+    }
 }
