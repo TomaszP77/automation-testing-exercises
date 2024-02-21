@@ -17,4 +17,14 @@ public class SelectSelenium extends BaseTest {
         Select sortBy = new Select(selectOption);
         sortBy.selectByIndex(2);
     }
+
+    @Test
+    public void selectByVisibleText() {
+        openSeleniumDemo();
+
+        driver.findElement(By.xpath("//span[text()='Shop']")).click();
+        WebElement selectOption = driver.findElement(By.name("orderby"));
+        Select sortBy = new Select(selectOption);
+        sortBy.selectByVisibleText("Sort by average rating");
+    }
 }
