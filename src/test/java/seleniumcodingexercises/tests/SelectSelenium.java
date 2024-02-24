@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import seleniumcodingexercises.utils.BaseTest;
 
+import java.util.List;
+
 public class SelectSelenium extends BaseTest {
 
     @Test
@@ -36,5 +38,19 @@ public class SelectSelenium extends BaseTest {
         WebElement selectOption = driver.findElement(By.name("orderby"));
         Select sortBy = new Select(selectOption);
         sortBy.selectByValue("price");
+    }
+
+    @Test
+    public void selectGetOption() {
+        openSeleniumDemo();
+
+        driver.findElement(By.xpath("//span[text()='Shop']")).click();
+        WebElement selectOption = driver.findElement(By.name("orderby"));
+        Select sortBy = new Select(selectOption);
+
+        List<WebElement> options = sortBy.getOptions();
+        for (WebElement option : options) {
+            System.out.println(option.getText());
+        }
     }
 }
