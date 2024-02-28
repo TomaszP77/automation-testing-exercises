@@ -23,4 +23,8 @@ public class BaseTest {
     public void openSeleniumTestingInputs() {
         driver.get("https://www.selenium.dev/selenium/web/inputs.html");
     }
+
+    public void openHandsOnSeleniumWebDriverWithJava() {
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/");
+    }
 }
