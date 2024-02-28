@@ -14,4 +14,13 @@ public class AlertBoxSupport extends BaseTest {
         driver.findElement(By.id("my-alert")).click();
         driver.switchTo().alert().accept();
     }
+
+    @Test
+    public void launchConfirm() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Dialog boxes']")).click();
+        driver.findElement(By.id("my-confirm")).click();
+        driver.switchTo().alert().dismiss();
+    }
 }
