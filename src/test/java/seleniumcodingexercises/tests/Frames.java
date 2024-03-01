@@ -38,4 +38,19 @@ public class Frames extends BaseTest {
         System.out.println(bodyText);
         driver.switchTo().defaultContent();
     }
+
+    @Test
+    public void switchToFrameByNameOrId() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Frames']")).click();
+        driver.switchTo().frame("frame-header");
+        String headerText = driver.findElement(By.cssSelector("h1[class=\"display-4\"]")).getText();
+        System.out.println(headerText);
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("frame-body");
+        String bodyText = driver.findElement(By.cssSelector("p[class=\"lead\"]")).getText();
+        System.out.println(bodyText);
+        driver.switchTo().defaultContent();
+    }
 }
