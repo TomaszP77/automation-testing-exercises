@@ -21,4 +21,17 @@ public class Screenshot extends BaseTest {
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(srcFile, new File("src/test/resources/screenshot/screenshot.png"));
     }
+
+    @Test
+    public void screenshotWithUniqueName() throws IOException {
+        openSeleniumDemo();
+
+        int randomNumber = (int) (Math.random() * 1000);
+        driver.findElement(By.xpath("//span[text()='Shop']")).click();
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File screenshotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        String screenshotName = "screenshot" + randomNumber + ".png";
+        FileUtils.copyFile(screenshotFile, new File("src/test/resources/unique-screenshot/" + screenshotName));
+    }
 }
+
