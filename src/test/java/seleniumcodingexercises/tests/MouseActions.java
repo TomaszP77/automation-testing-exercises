@@ -20,9 +20,10 @@ public class MouseActions extends BaseTest {
 
     @Test
     public void contextClick() {
-        openSeleniumDemo();
+        openHandsOnSeleniumWebDriverWithJava();
 
-        WebElement itemToClick = driver.findElement(By.cssSelector("span.sek-btn-text"));
+        driver.findElement(By.xpath("//a[text()='Dropdown menu']")).click();
+        WebElement itemToClick = driver.findElement(By.id("my-dropdown-2"));
         Actions actions = new Actions(driver);
         actions.contextClick(itemToClick).perform();
     }
