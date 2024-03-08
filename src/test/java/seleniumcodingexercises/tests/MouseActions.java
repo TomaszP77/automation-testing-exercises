@@ -27,4 +27,14 @@ public class MouseActions extends BaseTest {
         Actions actions = new Actions(driver);
         actions.contextClick(itemToClick).perform();
     }
+
+    @Test
+    public void doubleClick() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Dropdown menu']")).click();
+        WebElement itemToClick = driver.findElement(By.id("my-dropdown-3"));
+        Actions actions = new Actions(driver);
+        actions.doubleClick(itemToClick).perform();
+    }
 }
