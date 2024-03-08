@@ -9,6 +9,16 @@ import seleniumcodingexercises.utils.BaseTest;
 public class MouseActions extends BaseTest {
 
     @Test
+    public void leftClick() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Dropdown menu']")).click();
+        WebElement itemToClick = driver.findElement(By.id("my-dropdown-1"));
+        Actions actions = new Actions(driver);
+        actions.click(itemToClick).perform();
+    }
+
+    @Test
     public void contextClick() {
         openSeleniumDemo();
 
