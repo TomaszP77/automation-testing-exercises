@@ -37,4 +37,20 @@ public class MouseActions extends BaseTest {
         Actions actions = new Actions(driver);
         actions.doubleClick(itemToClick).perform();
     }
+
+    @Test
+    public void moveToElement() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Mouse over']")).click();
+        WebElement compassItem = driver.findElement(By.cssSelector("[src='img/compass.png']"));
+        WebElement calendarItem = driver.findElement(By.cssSelector("[src='img/calendar.png']"));
+        WebElement awardItem = driver.findElement(By.cssSelector("[src='img/award.png']"));
+        WebElement landscapeItem = driver.findElement(By.cssSelector("[src='img/landscape.png']"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(compassItem).perform();
+        actions.moveToElement(calendarItem).perform();
+        actions.moveToElement(awardItem).perform();
+        actions.moveToElement(landscapeItem).perform();
+    }
 }
