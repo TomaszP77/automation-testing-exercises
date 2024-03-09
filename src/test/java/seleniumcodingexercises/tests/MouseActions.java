@@ -53,4 +53,15 @@ public class MouseActions extends BaseTest {
         actions.moveToElement(awardItem).perform();
         actions.moveToElement(landscapeItem).perform();
     }
+
+    @Test
+    public void dragAndDrop() {
+        openHandsOnSeleniumWebDriverWithJava();
+
+        driver.findElement(By.xpath("//a[text()='Drag and drop']")).click();
+        WebElement draggableStart = driver.findElement(By.id("draggable"));
+        WebElement droppableFinish = driver.findElement(By.id("target"));
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(draggableStart, droppableFinish).perform();
+    }
 }
