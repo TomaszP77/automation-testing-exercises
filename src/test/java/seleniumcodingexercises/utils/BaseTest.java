@@ -1,5 +1,6 @@
 package seleniumcodingexercises.utils;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 
@@ -14,6 +15,11 @@ public class BaseTest {
         driver = DriverFactory.getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        driver.quit();
     }
 
     public void openSeleniumDemo() {

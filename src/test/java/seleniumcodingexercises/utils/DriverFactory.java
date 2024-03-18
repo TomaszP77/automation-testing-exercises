@@ -7,13 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    private static WebDriver driverInstance;
-
     public static WebDriver getDriver() {
-        if (driverInstance == null) {
-            driverInstance = selectDriver(DriverType.CHROME);
-        }
-        return driverInstance;
+        return selectDriver(DriverType.CHROME);
     }
 
     private static WebDriver selectDriver(DriverType type) {
