@@ -35,7 +35,7 @@ public class RegistrationTests extends BaseTest {
         createAnAccountPage.newsletterCheckbox();
         createAnAccountPage.customerDataPrivacy();
         createAnAccountPage.saveCreateAnAccount();
-        // add assertion
+        //add assertion
     }
 }
 
