@@ -11,5 +11,6 @@ public class BaseTest {
     public static void beforeAll() {
         Configuration.timeout = 30000;
         open("https://demo.prestashop.com/#/en/front");
+        switchTo().frame($("#framelive"));
     }
 }
