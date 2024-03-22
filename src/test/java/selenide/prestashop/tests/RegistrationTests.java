@@ -37,5 +37,6 @@ public class RegistrationTests extends BaseTest {
         createAnAccountPage.saveCreateAnAccount();
         //add assertion
     }
+    //add registrationUserInvalidData Test
 }
 
