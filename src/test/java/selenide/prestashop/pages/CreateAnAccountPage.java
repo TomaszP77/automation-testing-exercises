@@ -46,7 +46,7 @@ public class CreateAnAccountPage {
         $(By.name("customer_privacy")).click();
     }
 
-    public void saveCreateAnAccount(){
+    public void saveCreateAnAccount() {
         $("[class=\"btn btn-primary form-control-submit float-xs-right\"]").click();
     }
 }
