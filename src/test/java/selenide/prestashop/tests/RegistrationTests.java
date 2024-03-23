@@ -1,11 +1,14 @@
 package selenide.prestashop.tests;
 
+import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import selenide.prestashop.framework.BaseTest;
 import selenide.prestashop.pages.CreateAnAccountPage;
 import selenide.prestashop.pages.HomePage;
 import selenide.prestashop.pages.LogInRegistrationPage;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationTests extends BaseTest {
 
@@ -35,7 +38,9 @@ public class RegistrationTests extends BaseTest {
         createAnAccountPage.newsletterCheckbox();
         createAnAccountPage.customerDataPrivacy();
         createAnAccountPage.saveCreateAnAccount();
-        //add assertion
+
+        $(".user-info span").shouldBe(Condition.visible)
+                .shouldHave(Condition.partialTextCaseSensitive("Peter Montfort"));
     }
     //add registrationUserInvalidData Test
 }
