@@ -42,6 +42,27 @@ public class RegistrationTests extends BaseTest {
         $(".user-info span").shouldBe(Condition.visible)
                 .shouldHave(Condition.partialTextCaseSensitive("Peter Montfort"));
     }
-    //add registrationUserInvalidData Test
+
+    @Test
+    public void userRegistrationWithTooWeakPassword() {
+        homePage.openRegistrationPage();
+        logInRegistrationPage.registrationNewAccountLink();
+        createAnAccountPage.idGenderRadioButton();
+        createAnAccountPage.inputFirstName("Peter ");
+        createAnAccountPage.inputLastName("Montfort");
+        createAnAccountPage.inputEmail("emaildomain.com");
+        createAnAccountPage.inputPassword("123");
+        createAnAccountPage.inputBirthDate("03/07/1978");
+        createAnAccountPage.receiveOffersCheckbox();
+        createAnAccountPage.termsAndConditionsCheckbox();
+        createAnAccountPage.newsletterCheckbox();
+        createAnAccountPage.customerDataPrivacy();
+        createAnAccountPage.saveCreateAnAccount();
+
+        $(".password-requirements-length")
+                .shouldHave(Condition.partialText("Enter a password between 8 and 72 characters"));
+        $(".password-requirements-score")
+                .shouldHave(Condition.partialText("The minimum score must be: Strong"));
+    }
 }
 
