@@ -10,6 +10,7 @@ public class BaseTest {
     @BeforeAll
     public static void beforeAll() {
         Configuration.timeout = 30000;
+        Configuration.holdBrowserOpen = true;
         open("https://demo.prestashop.com/#/en/front");
         switchTo().frame($("#framelive"));
     }
