@@ -12,4 +12,8 @@ public class SelectedProductPage {
     public void proceedTooCheckout() {
         $x("//a[text()='Proceed to checkout']").click();
     }
+
+    public void deleteProductFromCart() {
+        $x("//i[text()='delete']").click();
+    }
 }
