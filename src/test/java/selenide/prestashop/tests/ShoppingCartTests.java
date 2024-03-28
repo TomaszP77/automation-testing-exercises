@@ -37,4 +37,16 @@ public class ShoppingCartTests extends BaseTest {
         $x("//a[text()='Proceed to checkout']")
                 .shouldHave(Condition.partialText("Proceed to checkout"));
     }
+
+    @Test
+    public void deleteProductTooCart() {
+        homePage.moveTheCursorToClothes();
+        homePage.clickOnCategoryMen();
+        menClothesPage.openHummingbirdPrintedShirtPage();
+        selectedProductPage.addTooCart();
+        selectedProductPage.proceedTooCheckout();
+        selectedProductPage.deleteProductFromCart();
+
+        $(".no-items").shouldHave(Condition.partialText("There are no more items in your cart"));
+    }
 }
